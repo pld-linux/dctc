@@ -1,0 +1,12 @@
+diff -Nur dctc-0.83.7.orig/src/userinfo.c dctc-0.83.7.chng/src/userinfo.c
+--- dctc-0.83.7.orig/src/userinfo.c	Wed Oct 30 16:49:57 2002
++++ dctc-0.83.7.chng/src/userinfo.c	Tue Nov  5 10:06:37 2002
+@@ -99,7 +99,7 @@
+ 
+ 	if(idx!=-1)
+ 	{
+-		printf("doing: %d\n",idx);
++//		printf("doing: %d\n",idx);
+ 		/* 1) the entry already exists, just update it */
+ 		/* 2) the entry does not exist but there is free space to add it */
+ 		LMP_UINFO *udp=&(((LMP_UINFO*)(local_dctc_user_info_lmp->mapped_addr))[idx]);
