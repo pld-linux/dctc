@@ -1,7 +1,7 @@
 Summary:	Direct Connect Text Client
 Summary(pl):	Tekstowy klient Direct Connect
 Name:		dctc
-Version:	0.85.0
+Version:	0.85.1
 Release:	1
 License:	GPL
 Group:		Applications/Communications
