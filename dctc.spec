@@ -7,7 +7,6 @@ License:	GPL
 Group:		Applications/Communications
 Source0:	http://ac2i.tzo.com/dctc/%{name}-%{version}.tar.gz
 Patch0:		%{name}-home_etc.patch
-Patch1:		%{name}-gcc2.patch
 URL:		http://ac2i.tzo.com/dctc/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -30,7 +29,6 @@ w³asnego protoko³u.
 %prep
 %setup -q
 %patch0 -p1
-#%patch1 -p1
 
 %build
 rm -f missing
