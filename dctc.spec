@@ -1,5 +1,5 @@
 Summary:	Direct Connect Text Client
-Summary(pl):	tekstowy klient Direct Connect
+Summary(pl):	Tekstowy klient Direct Connect
 Name:		dctc
 Version:	0.59
 Release:	1
@@ -14,9 +14,15 @@ BuildRequires:	glib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-DCTC is a Direct Connect clone, a windoz client allowing users to
+DCTC is a Direct Connect clone, a Windows client allowing users to
 share their files and talk (like IRC but more software sharing
 oriented) using a proprietary protocol.
+
+%description -l pl
+DCTC jest klonem Direct Connect, windowsowego klienta pozwalaj±cego
+u¿ytkonikom dzieliæ pliki i rozmawiaæ (podobnie do IRC-a, ale w sposób
+bardziej zorientowany na dzielenie oprogramowania) u¿ywaj±c w³asnego
+protoko³u.
 
 %prep
 %setup -q -c
@@ -28,7 +34,7 @@ oriented) using a proprietary protocol.
 rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT/%{_bindir}
-cp src/hublist src/dctc $RPM_BUILD_ROOT/%{_bindir}
+install src/hublist src/dctc $RPM_BUILD_ROOT/%{_bindir}
 
 gzip -9nf README COPYING ChangeLog INSTALL Documentation/*
 
