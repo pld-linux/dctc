@@ -35,11 +35,11 @@ gcc=%{__cc} ; export gcc
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_bindir}
 
-install -d $RPM_BUILD_ROOT/%{_bindir}
-install src/hublist src/dctc $RPM_BUILD_ROOT/%{_bindir}
+install src/hublist src/dctc $RPM_BUILD_ROOT%{_bindir}
 
-gzip -9nf README COPYING ChangeLog INSTALL Documentation/*
+gzip -9nf README ChangeLog Documentation/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -47,5 +47,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc *.gz Documentation
-%attr(755,root,root) %{_bindir}/hublist
-%attr(755,root,root) %{_bindir}/dctc
+%attr(755,root,root) %{_bindir}/*
