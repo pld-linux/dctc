@@ -50,3 +50,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc KNOWN_BUGS TODO README ChangeLog Documentation/* Documentation/*/*
 %attr(755,root,root) %{_bindir}/*
+%{_mandir}/man1/*
