@@ -1,16 +1,17 @@
 Summary:	Direct Connect Text Client
 Summary(pl):	Tekstowy klient Direct Connect
 Name:		dctc
-Version:	0.60
+Version:	0.62.0
 Release:	1
 License:	GPL
 Group:		Applications/Communications
 Group(de):	Applikationen/Kommunikation
 Group(pl):	Aplikacje/Komunikacja
-Source0:	http://ac2i.tzo.com/dctc/%{name}_v%{version}.tar.gz
-Patch0:		%{name}-CFLAGS.patch
+Source0:	http://ac2i.tzo.com/dctc/%{name}-%{version}.tar.gz
 URL:		http://ac2i.tzo.com/dctc/
 BuildRequires:	glib-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -25,19 +26,21 @@ bardziej zorientowany na dzielenie oprogramowania) u¿ywaj±c w³asnego
 protoko³u.
 
 %prep
-%setup -q -c
-%patch0 -p0
+%setup -q
 
 %build
-pldcflags="%{rpmcflags}" ; export pldcflags
-gcc=%{__cc} ; export gcc
-%{__make} nomakedepend
+rm -f missing
+aclocal
+autoconf
+automake -a -c
+%configure
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_bindir}
 
-install src/hublist src/dctc $RPM_BUILD_ROOT%{_bindir}
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf README ChangeLog Documentation/*
 
@@ -46,5 +49,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz Documentation
+%doc *.gz Documentation/*.gz
 %attr(755,root,root) %{_bindir}/*
