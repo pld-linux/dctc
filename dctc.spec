@@ -5,14 +5,6 @@ Version:	0.71.1
 Release:	1
 License:	GPL
 Group:		Applications/Communications
-Group(cs):	Aplikace/Komunikace
-Group(de):	Anwendungen/Kommunikation
-Group(es):	Aplicaciones/Comunicaciones
-Group(fr):	Applications/Transmissions
-Group(ja):	¥¢¥×¥ê¥±¡¼¥·¥ç¥ó/ÄÌ¿®
-Group(pl):	Aplikacje/Komunikacja
-Group(pt):	Aplicações/Comunicações
-Group(ru):	ğÒÉÌÏÖÅÎÉÑ/ó×ÑÚØ
 Source0:	http://ac2i.tzo.com/dctc/%{name}-%{version}.tar.gz
 URL:		http://ac2i.tzo.com/dctc/
 BuildRequires:	autoconf
