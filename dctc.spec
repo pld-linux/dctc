@@ -6,8 +6,8 @@ License:	GPL
 Group:		Applications/Communications
 Group(de):	Applikationen/Kommunikation
 Group(pl):	Aplikacje/Komunikacja
-Source0:	%{name}_v%{version}.tar.gz
-URL:		http://ac2i.tzo.com/dcdt
+Source0:	http://ac2i.tzo.com/dctc/%{name}_v%{version}.tar.gz
+URL:		http://ac2i.tzo.com/dctc/
 BuildRequires:	XFree86-devel
 BuildRequires:	glib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
