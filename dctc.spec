@@ -1,14 +1,13 @@
 Summary:	Direct Connect Text Client
 Summary(pl):	Tekstowy klient Direct Connect
 Name:		dctc
-Version:	0.62.0
+Version:	0.64.0
 Release:	1
 License:	GPL
 Group:		Applications/Communications
 Group(de):	Applikationen/Kommunikation
 Group(pl):	Aplikacje/Komunikacja
 Source0:	http://ac2i.tzo.com/dctc/%{name}-%{version}.tar.gz
-Patch0:		%{name}-shared.patch
 URL:		http://ac2i.tzo.com/dctc/
 BuildRequires:	glib-devel
 BuildRequires:	autoconf
@@ -28,7 +27,6 @@ protoko³u.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 rm -f missing
@@ -44,12 +42,12 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf README ChangeLog Documentation/*
+gzip -9nf README ChangeLog Documentation/* Documentation/*/* || :
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz Documentation/*.gz
+%doc *.gz Documentation/*.gz Documentation/*/*.gz
 %attr(755,root,root) %{_bindir}/*
