@@ -9,7 +9,7 @@ Group:		Applications/Communications
 Source0:	http://brainz.servebeer.com/dctc/%{name}-%{version}.tar.gz
 # Source0-md5:	3e2772cbbc36fac47fd31d01a7520a2e
 Patch0:		%{name}-home_etc.patch
-URL:		http://ac2i.linuxhome.com/dctc/
+URL:		http://ac2i.homelinux.com/dctc/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	db-devel
