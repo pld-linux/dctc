@@ -14,9 +14,10 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	db-devel
 BuildRequires:	glib-devel
+BuildRequires:	libgcrypt-devel
+BuildRequires:	libxml2-devel
 BuildRequires:	pkgconfig
 BuildRequires:	openssl-devel >= 0.9.7d
-BuildRequires:	libxml2-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
