@@ -1,12 +1,18 @@
 Summary:	Direct Connect Text Client
 Summary(pl):	Tekstowy klient Direct Connect
 Name:		dctc
-Version:	0.69.0
+Version:	0.70.0
 Release:	1
 License:	GPL
 Group:		Applications/Communications
-Group(de):	Applikationen/Kommunikation
+Group(cs):	Aplikace/Komunikace
+Group(de):	Anwendungen/Kommunikation
+Group(es):	Aplicaciones/Comunicaciones
+Group(fr):	Applications/Transmissions
+Group(ja):	¥¢¥×¥ê¥±¡¼¥·¥ç¥ó/ÄÌ¿®
 Group(pl):	Aplikacje/Komunikacja
+Group(pt):	Aplicações/Comunicações
+Group(ru):	ğÒÉÌÏÖÅÎÉÑ/ó×ÑÚØ
 Source0:	http://ac2i.tzo.com/dctc/%{name}-%{version}.tar.gz
 URL:		http://ac2i.tzo.com/dctc/
 BuildRequires:	autoconf
