@@ -11,6 +11,7 @@ Patch1:		%{name}-gcc2.patch
 URL:		http://ac2i.tzo.com/dctc/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	db3-devel
 BuildRequires:	glib-devel
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
