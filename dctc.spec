@@ -12,12 +12,12 @@ Patch0:		%{name}-home_etc.patch
 URL:		http://ac2i.homelinux.com/dctc/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	db-devel
-BuildRequires:	glib-devel
+BuildRequires:	db-devel >= 3.0
+BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libgcrypt-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	pkgconfig
-BuildRequires:	openssl-devel >= 0.9.7d
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,13 +33,12 @@ w³asnego protoko³u.
 
 %prep
 %setup -q
-
-%patch -p1
+%patch0 -p1
 
 %build
-rm -f missing
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure
 %{__make}
