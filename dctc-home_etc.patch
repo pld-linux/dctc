@@ -1,7 +1,7 @@
-diff -Nur dctc-0.82.0.orig/src/dc_com.c dctc-0.82.0.chng/src/dc_com.c
---- dctc-0.82.0.orig/src/dc_com.c	Wed Apr  3 15:26:36 2002
-+++ dctc-0.82.0.chng/src/dc_com.c	Mon Jun  3 09:35:10 2002
-@@ -203,8 +203,17 @@
+diff -urN dctc-0.85.0.org/src/dc_com.c dctc-0.85.0/src/dc_com.c
+--- dctc-0.85.0.org/src/dc_com.c	Thu Mar 13 19:03:42 2003
++++ dctc-0.85.0/src/dc_com.c	Thu Mar 13 19:04:16 2003
+@@ -206,8 +206,17 @@
  			char *path;
  
  			path=getenv("HOME");
@@ -21,26 +21,24 @@ diff -Nur dctc-0.82.0.orig/src/dc_com.c dctc-0.82.0.chng/src/dc_com.c
  		}
  
  		/* fill the running_dctc array with the path to UDP socket of all running dctc */
-diff -Nur dctc-0.82.0.orig/src/main.c dctc-0.82.0.chng/src/main.c
---- dctc-0.82.0.orig/src/main.c	Fri May 24 17:59:11 2002
-+++ dctc-0.82.0.chng/src/main.c	Mon Jun  3 11:06:13 2002
-@@ -1603,8 +1603,17 @@
- 		struct stat st;
- 
- 		path=getenv("HOME");
--		local_dctc_sock_path=g_string_new(NULL);
--		g_string_sprintf(local_dctc_sock_path,"%s/.dctc",(path!=NULL)?path:".");
-+		if (!path)
-+		    path = ".";
-+    
-+		if(getenv("CONFIG_DIR"))
-+		    path = g_strconcat(path, "/", getenv("CONFIG_DIR"), "/dctc", NULL);
-+		else
-+		    path = g_strconcat(path, "/.dctc", NULL);
-+		    
-+		
-+		local_dctc_sock_path=g_string_new(path);
-+		g_free(path);
+diff -urN dctc-0.85.0.org/src/main.c dctc-0.85.0/src/main.c
+--- dctc-0.85.0.org/src/main.c	Thu Mar 13 19:03:42 2003
++++ dctc-0.85.0/src/main.c	Thu Mar 13 19:06:06 2003
+@@ -1675,7 +1675,16 @@
+ 			free(socket_dir);
+ 		} else {
+ 			path=getenv("HOME");
+-			g_string_sprintf(local_dctc_sock_path,"%s/.dctc",(path!=NULL)?path:".");
++			if (!path)
++				path = ".";
++
++			if(getenv("CONFIG_DIR"))
++				path = g_strconcat(path, "/", getenv("CONFIG_DIR"), "/dctc", NULL);
++			else
++				path = g_strconcat(path, "/.dctc", NULL);
++
++			local_dctc_sock_path=g_string_new(path);
++			g_free(path);
+ 		}
  
  		if(stat(local_dctc_sock_path->str,&st))
- 		{
