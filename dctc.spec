@@ -10,7 +10,6 @@ Group(pl):	Aplikacje/Komunikacja
 Source0:	http://ac2i.tzo.com/dctc/%{name}_v%{version}.tar.gz
 Patch0:		%{name}-CFLAGS.patch
 URL:		http://ac2i.tzo.com/dctc/
-BuildRequires:	XFree86-devel
 BuildRequires:	glib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
