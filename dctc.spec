@@ -1,8 +1,8 @@
 Summary:	Direct Connect Text Client
 Summary(pl):	Tekstowy klient Direct Connect
 Name:		dctc
-Version:	0.82.0
-Release:	2
+Version:	0.83.0
+Release:	1
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://ac2i.tzo.com/dctc/%{name}-%{version}.tar.gz
@@ -33,7 +33,7 @@ rm -f missing
 aclocal
 %{__autoconf}
 %{__automake}
-%configure
+%configure --enable-glib2
 %{__make}
 
 %install
