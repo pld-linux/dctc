@@ -8,6 +8,7 @@ Group:		Applications/Communications
 Group(de):	Applikationen/Kommunikation
 Group(pl):	Aplikacje/Komunikacja
 Source0:	http://ac2i.tzo.com/dctc/%{name}-%{version}.tar.gz
+Patch0:		%{name}-shared.patch
 URL:		http://ac2i.tzo.com/dctc/
 BuildRequires:	glib-devel
 BuildRequires:	autoconf
@@ -27,6 +28,7 @@ protoko³u.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 rm -f missing
