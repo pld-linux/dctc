@@ -1,6 +1,6 @@
 Summary:	dctc
 Name:		dctc
-Version:	0.58
+Version:	0.59
 Release:	1
 License:	GPL
 Group:		Applications/Communications
