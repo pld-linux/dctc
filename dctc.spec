@@ -15,6 +15,7 @@ BuildRequires:	automake
 BuildRequires:	db-devel >= 3.0
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	libgcrypt-devel
+BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	pkgconfig
 BuildRequires:	zlib-devel
@@ -36,6 +37,7 @@ w³asnego protoko³u.
 %patch0 -p1
 
 %build
+%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
