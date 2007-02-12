@@ -1,5 +1,5 @@
 Summary:	Direct Connect Text Client
-Summary(pl):	Tekstowy klient Direct Connect
+Summary(pl.UTF-8):   Tekstowy klient Direct Connect
 Name:		dctc
 Version:	0.85.9
 Release:	2
@@ -26,11 +26,11 @@ DCTC is a Direct Connect clone, a Windows client allowing users to
 share their files and talk (like IRC but more software sharing
 oriented) using a proprietary protocol.
 
-%description -l pl
-DCTC jest klonem Direct Connect, windowsowego klienta pozwalaj±cego
-u¿ytkownikom wspó³dzieliæ pliki i rozmawiaæ (podobnie do IRC-a, ale w
-sposób bardziej zorientowany na dzielenie oprogramowania) u¿ywaj±c
-w³asnego protoko³u.
+%description -l pl.UTF-8
+DCTC jest klonem Direct Connect, windowsowego klienta pozwalajÄ…cego
+uÅ¼ytkownikom wspÃ³Å‚dzieliÄ‡ pliki i rozmawiaÄ‡ (podobnie do IRC-a, ale w
+sposÃ³b bardziej zorientowany na dzielenie oprogramowania) uÅ¼ywajÄ…c
+wÅ‚asnego protokoÅ‚u.
 
 %prep
 %setup -q
