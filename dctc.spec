@@ -1,5 +1,5 @@
 Summary:	Direct Connect Text Client
-Summary(pl.UTF-8):   Tekstowy klient Direct Connect
+Summary(pl.UTF-8):	Tekstowy klient Direct Connect
 Name:		dctc
 Version:	0.85.9
 Release:	2
